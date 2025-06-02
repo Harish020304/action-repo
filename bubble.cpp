@@ -3,36 +3,7 @@
 #include <algorithm>
 #include <cmath>
 using namespace std;
-
-// Function to generate the sub-number of N
-int subNumber(int input1, int input2) {
-    string n = to_string(input1);
-    int k = input2;
-    int closest = -1;
-    int minDiff = INT_MAX;
-
-    // Generate all possible sub-numbers
-    int len = n.size();
-    for (int i = 1; i < (1 << len); i++) {
-        string sub = "";
-        for (int j = 0; j < len; j++) {
-            if (i & (1 << j)) {
-                sub += n[j];
-            }
-        }
-        // Convert sub-number to integer
-        int subNum = stoi(sub);
-        // Check if subNum is greater than K and closer to K
-        if (subNum > k) {
-            int diff = abs(subNum - k);
-            if (diff < minDiff || (diff == minDiff && subNum < closest)) {
-                closest = subNum;
-                minDiff = diff;
-            }
-        }
-    }
-    return closest;
-}
+      sub += n[j];
 
 int main() {
     // Example 1
